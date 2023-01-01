@@ -23,7 +23,7 @@ type Server struct {
 func NewServer(port uint16, clients []*pihole.Client) *Server {
 	mux := http.NewServeMux()
 	httpServer := &http.Server{
-		Addr:    ":" + strconv.Itoa(int(port)),
+		Addr:    "0.0.0.0:" + strconv.Itoa(int(port)),
 		Handler: mux,
 	}
 
